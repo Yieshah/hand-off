@@ -12,13 +12,13 @@
 - 用户要求复盘、总结，或任务完成后需要收尾。
 - 需要基于当前对话和可访问材料整理进度、阻塞、决定与下一步。
 
-普通短任务默认不触发，除非用户明确调用。
+普通短任务默认不触发；用户明确说会话结束、任务结束或收尾时，也会进入收尾流程。
 
 ### 使用
 
-在宿主支持的情况下调用 `$hand-off`。Skill 会根据证据判断应执行交接、完成收尾还是续接；不把计划写成已完成，也不补造缺失信息。
+Codex 用 `$hand-off` 显式调用，Trae 用 `/hand-off` 显式调用，其他宿主或语法不可用时用自然语言明确点名 hand-off 技能。Skill 会根据证据判断应执行交接、完成收尾还是续接；不把计划写成已完成，也不补造缺失信息。
 
-默认交接文件位置为当前项目的 `progress/HANDOFF.md`。写入长期记忆或其他经验库仍需要用户明确授权。
+默认交接文件位置为当前项目的 `progress/HANDOFF.md`。明确结束指令触发时，项目 `progress/memory.md`、`wiki.md`、`learnings.md` 和进度 checkpoint 在有内容时按类别自动保存；跨项目的全局记忆、经验或工作流只在用户逐项确认后写入。
 
 ### 交接模板包含
 
@@ -41,13 +41,13 @@
 - The user asks for a retrospective or summary, or a completed task needs a wrap-up.
 - Progress, blockers, decisions, and next steps need to be organized from the current conversation and accessible project materials.
 
-It is not triggered by default for ordinary short tasks unless explicitly invoked.
+Ordinary short tasks do not trigger it by default. An explicit instruction to end or wrap up the session also starts the closeout workflow.
 
 ### Usage
 
-Invoke `$hand-off` when supported by the host. Based on available evidence, the skill chooses handoff, completion wrap-up, or continuation. It does not present plans as completed work or invent missing information.
+In Codex, invoke `$hand-off`; in Trae, invoke `/hand-off`; on other hosts or when no explicit syntax is available, ask in natural language to use the hand-off skill. Based on available evidence, the skill chooses handoff, completion wrap-up, or continuation. It does not present plans as completed work or invent missing information.
 
-The default handoff file is `progress/HANDOFF.md` in the current project. Writing to long-term memory or another experience store still requires the user's explicit authorization.
+The default handoff file is `progress/HANDOFF.md` in the current project. On an explicit end instruction, project `progress/memory.md`, `wiki.md`, `learnings.md`, and a progress checkpoint are saved by category when there is relevant content. Cross-project global memory, lessons, or workflows are written only after the user approves each candidate.
 
 ### The handoff template covers
 
