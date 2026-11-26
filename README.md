@@ -16,7 +16,7 @@
 
 ### 使用
 
-Codex 用 `$hand-off` 显式调用，Trae 用 `/hand-off` 显式调用，其他宿主或语法不可用时用自然语言明确点名 hand-off 技能。Skill 会根据证据判断应执行交接、完成收尾还是续接；不把计划写成已完成，也不补造缺失信息。
+支持显式技能语法的宿主直接使用对应语法调用 hand-off；其他宿主或语法不可用时，用自然语言明确点名 hand-off 技能。Skill 会根据证据判断应执行交接、完成收尾还是续接；不把计划写成已完成，也不补造缺失信息。
 
 默认交接文件位置为当前项目的 `progress/HANDOFF.md`。明确结束指令触发时，项目 `progress/memory.md`、`wiki.md`、`learnings.md` 和进度 checkpoint 在有内容时按类别自动保存；跨项目的全局记忆、经验或工作流只在用户逐项确认后写入。
 
@@ -45,7 +45,7 @@ Ordinary short tasks do not trigger it by default. An explicit instruction to en
 
 ### Usage
 
-In Codex, invoke `$hand-off`; in Trae, invoke `/hand-off`; on other hosts or when no explicit syntax is available, ask in natural language to use the hand-off skill. Based on available evidence, the skill chooses handoff, completion wrap-up, or continuation. It does not present plans as completed work or invent missing information.
+Hosts that support explicit skill syntax can invoke hand-off directly with their native syntax; on other hosts or when no explicit syntax is available, ask in natural language to use the hand-off skill. Based on available evidence, the skill chooses handoff, completion wrap-up, or continuation. It does not present plans as completed work or invent missing information.
 
 The default handoff file is `progress/HANDOFF.md` in the current project. On an explicit end instruction, project `progress/memory.md`, `wiki.md`, `learnings.md`, and a progress checkpoint are saved by category when there is relevant content. Cross-project global memory, lessons, or workflows are written only after the user approves each candidate.
 
