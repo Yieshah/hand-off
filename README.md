@@ -59,3 +59,11 @@ The default handoff file is `progress/HANDOFF.md` in the current project. On an 
 - Outcomes, workflow, lessons, and memory candidates for completed-task retrospectives
 
 The session name should describe the overall thread across stages. Change the topic only when evidence shows the overall goal has changed. If the overall topic cannot be identified, keep the current name and mark it as unconfirmed.
+
+### 新会话启动包
+
+交接时会在 `HANDOFF.md` 末尾提供推荐工作区、推荐项目、简要原因和可直接粘贴到新会话的续接提示词。
+
+### New-session bootstrap
+
+On handoff, the end of `HANDOFF.md` includes the recommended workspace, project, reason, and a copy-paste prompt for the next session.
